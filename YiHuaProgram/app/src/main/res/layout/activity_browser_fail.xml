@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/dp48"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/load_failed" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp48"
+            android:layout_marginBottom="@dimen/dp48"
+            android:text="加载失败..."
+            android:textColor="@color/gray"
+            android:textSize="@dimen/font14" />
+
+        <TextView
+            android:textColor="@color/little_blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_sqare_selector"
+            android:paddingLeft="@dimen/dp48"
+            android:paddingTop="@dimen/dp8"
+            android:paddingRight="@dimen/dp48"
+            android:paddingBottom="@dimen/dp8"
+            android:text="重新加载"
+            android:textSize="@dimen/font16" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

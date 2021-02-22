@@ -1,0 +1,76 @@
+/**
+ * IOS系统js桥接口设置
+ * @param {Object} callback 桥接口回调函数 桥接方式固定写法
+
+ */
+const setUpIOSBridge = (callback) => {
+    if (window.WebViewJavascriptBridge) {
+        return callback(WebViewJavascriptBridge);
+    }
+    if (window.WVJBCallbacks) {
+        return window.WVJBCallbacks.push(callback);
+    }
+    window.WVJBCallbacks = [callback];
+    var WVJBIframe = document.createElement('iframe');
+    WVJBIframe.style.display = 'none';
+    WVJBIframe.src = 'https://__bridge_loaded__';
+    document.documentElement.appendChild(WVJBIframe);
+    setTimeout(function () {
+        document.documentElement.removeChild(WVJBIframe)
+    }, 0)
+};
+
+
+/**
+ * android系统js桥接口设置
+ * @param {Object} callback 桥接口回调函数 桥接方式固定写法
+ */
+const setUpAndroidBridge = (callback) => {
+    if (window.WebViewJavascriptBridge) {
+        return callback(WebViewJavascriptBridge);
+    } else {
+        document.addEventListener(
+            'WebViewJavascriptBridgeReady',
+            function () {
+                return callback(WebViewJavascriptBridge);
+            },
+            false
+        );
+    }
+};
+
+
+const callHandler = (name, data, resultCallback) => {
+
+   var osType = "ANDROID";//获取系统类型
+
+    //按系统类型 分别执行原生交互
+    if (osType == 'IOS') {
+        //苹果手机交互方式 消息体为字面量对象(json格式)： action 代表执行的动作 data 代表传递的数据
+        setUpIOSBridge(function (bridge) {
+            bridge.callHandler(name, data, function (response) {
+                if (typeof resultCallback == 'function') {
+                    resultCallback(response);
+                }
+            });
+        });
+    } else if (osType == 'ANDROID') {
+        //安卓手机交互方式
+        setUpAndroidBridge(function (bridge) {
+            bridge.callHandler(name, data, function (response) {
+                if (typeof resultCallback == 'function') {
+                    resultCallback(response);
+                }
+            });
+        });
+    } else {
+        //其他类型
+    }
+
+
+};
+
+
+module.exports = {
+    callHandler
+}

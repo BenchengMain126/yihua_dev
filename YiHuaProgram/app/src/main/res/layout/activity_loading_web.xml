@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp32"
+        android:layout_marginTop="@dimen/dp32"
+        android:layout_marginRight="@dimen/dp32"
+        android:layout_marginBottom="@dimen/dp4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/lineHight"
+                android:layout_marginLeft="@dimen/dp8"
+                android:layout_marginTop="@dimen/dp2"
+                android:layout_marginRight="@dimen/dp8"
+                android:layout_marginBottom="@dimen/dp2"
+                android:background="@color/colorLine" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone"
+                android:text="http://192.168.43.210:8080/verify/#/"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp42"
+                android:background="@null"
+                android:hint="请输入链接地址"
+                android:paddingLeft="@dimen/dp12"
+                android:paddingRight="@dimen/dp12"
+                android:textColor="@color/colorAhp_Black"
+                android:textColorHint="@color/colorGray_c"
+                android:textSize="@dimen/font16" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/lineHight"
+                android:layout_marginLeft="@dimen/dp8"
+                android:layout_marginTop="@dimen/dp2"
+                android:layout_marginRight="@dimen/dp8"
+                android:layout_marginBottom="@dimen/dp2"
+                android:background="@color/colorLine" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginLeft="@dimen/dp8"
+                android:layout_marginTop="@dimen/dp36"
+                android:layout_marginRight="@dimen/dp8"
+                android:background="@drawable/selector_login_btn"
+                android:text="登录"
+                android:textColor="@color/selector_login_btn"
+                android:textSize="@dimen/font16" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+</LinearLayout>

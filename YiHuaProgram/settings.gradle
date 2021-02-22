@@ -1,0 +1,4 @@
+include ':appupdateX'
+include ':tdialog'
+rootProject.name='YiHuaProgram'
+include ':app'

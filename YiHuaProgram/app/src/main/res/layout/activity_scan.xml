@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <cn.bingoogolapple.qrcode.zxing.ZXingView
+        android:id="@+id/zxingview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:qrcv_animTime="1000"
+        app:qrcv_barCodeTipText="将条码放入框内，即可自动扫描"
+        app:qrcv_barcodeRectHeight="140dp"
+        app:qrcv_borderColor="@android:color/white"
+        app:qrcv_borderSize="0.5dp"
+        app:qrcv_cornerColor="@color/green3"
+        app:qrcv_cornerLength="20dp"
+        app:qrcv_cornerSize="3dp"
+        app:qrcv_isBarcode="false"
+        app:qrcv_isCenterVertical="false"
+        app:qrcv_isOnlyDecodeScanBoxArea="false"
+        app:qrcv_isScanLineReverse="true"
+        app:qrcv_isShowDefaultGridScanLineDrawable="false"
+        app:qrcv_isShowDefaultScanLineDrawable="true"
+        app:qrcv_isShowTipBackground="true"
+        app:qrcv_isShowTipTextAsSingleLine="false"
+        app:qrcv_isTipTextBelowRect="true"
+        app:qrcv_maskColor="#33FFFFFF"
+        app:qrcv_qrCodeTipText="将二维码/条码放入框内，即可自动扫描"
+        app:qrcv_rectWidth="200dp"
+        app:qrcv_scanLineColor="@color/green1"
+        app:qrcv_scanLineMargin="0dp"
+        app:qrcv_scanLineSize="1dp"
+        app:qrcv_tipTextColor="@android:color/white"
+        app:qrcv_tipTextSize="12sp"
+        app:qrcv_toolbarHeight="56dp"
+        app:qrcv_topOffset="90dp" />
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_layout" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/adb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="将二维码/条码放入框内，即可自动扫描"
+            android:textColor="#b2b2b2"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/flash_light"
+            android:layout_width="@dimen/size_72"
+            android:layout_height="@dimen/size_72"
+            android:layout_below="@id/adb"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_white_circle"
+            android:padding="8dp"
+            android:src="@drawable/ck_status_selector" />
+
+    </RelativeLayout>
+
+
+</com.zhy.autolayout.AutoRelativeLayout>
