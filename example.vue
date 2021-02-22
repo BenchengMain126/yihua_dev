@@ -1,6 +1,8 @@
 <template>
 
   <div class="container">
+  
+  
 
     <van-button type="primary" @click="saveCache()">saveCache</van-button>
     <van-button type="info" @click="getCache()">getCache</van-button>
@@ -86,6 +88,7 @@
     },
     data() {
       return {
+	  "test":'test',
         "result": '初始化数据初始化数据初始化数据初始化数据初始化数据初始化数据初始化数据初始化数据初始化数据初始化数据初始化数据初始化数据初始化数据初始化数据初始化数据初始化数据'
       }
     },
